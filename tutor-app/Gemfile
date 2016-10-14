@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # 3rd party token based authentication
 gem 'omniauth'
 gem 'devise_token_auth'
+
+# For CORS in Angular
+gem 'rack-cors'
