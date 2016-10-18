@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
+  before_action :set_review, only: [:show, :edit, :update, :destroy, :reviewer]
 
   # GET /reviews
   # GET /reviews.json
@@ -58,6 +58,14 @@ class ReviewsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+  
+  def reviewer
+    @user = User.find(@review.reviewer_id)
+    respond_to do |format|
+      format.html { redirect_to @user }
+      format.json { render @user }
     end
   end
 
