@@ -12,8 +12,15 @@
 
 <% @user.received_reviews.each_with_index do |received_review, index| %>
 <p>
-  <strong><%= link_to "review"+(index+1).to_s, received_review %></strong>
+  <strong><%= link_to "received review"+(index+1).to_s, received_review %></strong>
   <%= received_review.comment %>
+</p>
+<% end %>
+
+<% @user.posted_reviews.each_with_index do |posted_review, index| %>
+<p>
+  <strong><%= link_to "posted review"+(index+1).to_s, posted_review %></strong>
+  <%= posted_review.comment %>
 </p>
 <% end %>
 
